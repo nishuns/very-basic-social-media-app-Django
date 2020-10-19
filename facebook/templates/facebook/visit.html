@@ -1,0 +1,33 @@
+{% extends 'facebook/layout.html' %} {% block title %} Profile {% endblock %}
+{%block body %}
+<div class="profile_page" style="margin: 0 auto;"> 
+  <div class="front">
+    <div class="profile">
+        <h1 class="profile_name">{{ user_det.user_id }}</h1>
+        <div class="profile_picture"><img id="dp" src="{{user_det.profile_url}}" /></div>
+        <h3 class="profile_des">
+          {{user_det.name}}
+      </h3>
+    </div>
+    <div class="tab">
+      <table>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>profile</td>
+          <td>photos</td>
+          <td>uploads</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="back">
+    <h5 class="users_list_bio" style="font-size: 1.3rem;"><strong>Email</strong> <br>{{   user_det.email    }}</h5>
+    <h5 class="users_list_bio" style="font-size: 1.3rem;"><strong>Date of Birth</strong><br>{{   user_det.dob    }}</h5>
+    <h5 class="users_list_bio" style="font-size: 1.1rem;"><strong>Bio</strong> <br>{{   user_det.bio    }}</h5>
+  </div>
+</div>
+{% endblock %}

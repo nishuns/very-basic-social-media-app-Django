@@ -1,0 +1,24 @@
+{% extends 'facebook/layout.html'%} {% block title %} Sign in {% endblock %}
+{%block body %}
+<div class="login_main">
+  <div class="title">
+    <h1 class="title_sub">Facebook</h1>
+  </div>
+  <div class="login">
+    <form class="login_entry" action="{%    url 'login'    %}" method="POST">
+      {% csrf_token %}
+      <h1>Log in to Facebook</h1>
+      <h3 class="error">{{ message }}</h3>
+      <input  class="login_input"type="text" name="username" id="username" placeholder="username" />
+      <input class="login_input"
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+      />
+      <input class="login_submit"type="submit" value="login" />
+      <a href="{% url 'signup'%}" class="new_account">Create a new Account</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

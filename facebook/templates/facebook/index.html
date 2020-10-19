@@ -1,0 +1,34 @@
+{%  extends  'facebook/layout.html'%}
+
+{%  block title %}
+Welcome to Facebook
+{% endblock %}
+
+{%block body  %}
+<div class="index_main">
+<div class="loggers_block">
+    <img src="{{acc_box.profile_url}}" id="loggers_img">
+    <div class="loggers_info">
+        <a id="name" href="{%   url 'signin'   %}">{{  acc_box.name  }}</a>
+        <h5 id="info_bio">{{  acc_box.bio   }}</h5>
+    </div>
+    <div class="online">
+        <div class="dot"></div>
+        <a href="" class="logout signout">logout</a>
+    </div>
+</div>
+<div class="users_list">
+    <h1>Users List</h1>
+    {%  for user in users_list%}
+        <div class="users_list_ele">
+            <img src="{{user.profile_url}}" class="users_list_img">
+            <a class="users_list_name" href="{% url 'visitme' user.id %}">{{  user.name}}</a>
+            <h5 class="users_list_bio"><strong>Email</strong> <br>{{   user.email    }}</h5>
+            <h5 class="users_list_bio"><strong>Date of Birth</strong><br>{{   user.dob    }}</h5>
+            <h5 class="users_list_bio"><strong>Bio</strong> <br>{{   user.bio    }}</h5>
+        </div>
+    {%  endfor  %}
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,2 @@
+'static' directory is used to create to design the applications basically
+The directoy here are depended upon the applications 'name'.

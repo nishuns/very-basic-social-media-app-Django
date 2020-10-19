@@ -1,0 +1,55 @@
+{% extends 'facebook/layout.html' %}
+
+{% block title %}
+    Sign up
+{% endblock  %}
+
+{% block body %}
+        <div class="main_create">
+        <!-- <h1>Sign up for Facebook</h1> -->
+        <form class="main_create_entry" action="{%  url 'create' %}" method="POST">
+            {% csrf_token %}
+            <h1 class="main_create_title">Sign up for facebook</h1>
+            <h3 class="error">{{ message }}</h3>
+            <div class="name">
+                <h3 class="name_heading">Name<sup>*</sup></h3>
+                <input class="main_create_entry_input" type="text" name="fullname" id="fullname">
+                <p class="name_war"></p>
+            </div>
+            <div class="username">
+                <h3 class="username_heading">username<sup>*</sup></h3>
+                <input class="main_create_entry_input" type="text" name="username" id="username">
+                <p class="username_war"></p>
+            </div>
+            <div class="email">
+                <h3 class="Email_heading">Email<sup>*</sup></h3>
+                <input class="main_create_entry_input" type="email" name="email" id="email" placeholder="eg: harrypotter@gmail.com">
+                <p class="email_war"></p>
+            </div>
+            <div class="password">
+                <h3 class="password_one_heading">password<sup>*</sup></h3>
+                <input class="main_create_entry_input" type="password" name="password_one" id="password_one">
+                <h3 class="password_two_heading">Confirm password<sup>*</sup></h3>
+                <input class="main_create_entry_input" type="password" name="password_two" id="password_two">
+                <p class="password_war"></p>
+            </div>
+            <div class="dob">
+                <h3 class="Date of Birth_heading">Date of Birth<sup>*</sup></h3>
+                <input class="main_create_entry_input" type="date" name="dob" id="dob">
+                <p class="date_war"></p>
+            </div>
+            <div class="bio">
+                <h3 class="Bio_heading">Bio</h3>
+                <textarea name="bio" id="bio" cols="30" rows="5" placeholder="Enter the description here...">
+                </textarea>
+            </div>
+            <div class="profile_picture">
+                <h3 class="Profile_url_heading">Profile Picture url</h3>
+                <input class="main_create_entry_input" type="url" name="profile_url" id="profile_picture">
+            </div>
+            <input type="button" id="validate" class="create_profile" value="validate">
+            <input type="submit" id="signup_profile" class="create_profile" value="Sign up">
+
+        </form>
+    </div>
+{% endblock  %}

@@ -1,0 +1,43 @@
+{% extends 'facebook/layout.html' %} {% block title %} Profile {% endblock %}
+{%block body %}
+<div class="profile_main">
+  <div class="profile_page">
+    <div class="front">
+      <div class="profile">
+          <h1 class="profile_name">{{ user_det.user_id }}</h1>
+          <div class="profile_picture"><img id="dp" src="{{user_det.profile_url}}" /></div>
+          <h3 class="profile_des">
+            {{user_det.name}}
+        </h3>
+      </div>
+      <div class="tab">
+        <table>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>profile</td>
+            <td>photos</td>
+            <td>uploads</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="back">
+      <h5 class="users_list_bio"><strong>Email</strong> <br>{{   user_det.email    }}</h5>
+      <h5 class="users_list_bio"><strong>Date of Birth</strong><br>{{   user_det.dob    }}</h5>
+      <h5 class="users_list_bio"><strong>Bio</strong> <br>{{   user_det.bio    }}</h5>
+      <a href="{% url 'logout'%}" class="signout">logout</a>
+    </div>
+  </div>
+  <div class="profile_access">
+        <h1 class="profile_access_title"><span>Name</span><br> {{user_det.name}}</h1>
+        <h1 class="profile_access_title"><span>Username</span><br> {{user_det.user_id}}</h1>
+        <h1 class="profile_access_title"><span>Email</span><br> {{user_det.email}}</h1>
+        <h1 class="profile_access_title"><span>date of birth</span><br> {{user_det.dob}}</h1>
+        <h1 class="profile_access_title"> <span>Bio</span><br>{{user_det.bio}}</h1>
+  </div>
+</div>
+{% endblock %}
